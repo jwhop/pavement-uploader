@@ -1,0 +1,27 @@
+{
+  "name": "pavement-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jwhop/pavement-uploader#readme",
+  "bugs": {
+    "url": "https://github.com/jwhop/pavement-uploader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwhop/pavement-uploader.git"
+  },
+  "license": "ISC",
+  "author": "jwhop",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@xoi/gps-metadata-remover": "^2.0.0",
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "heic-convert": "^2.1.0",
+    "nodemon": "^3.1.14"
+  }
+}
