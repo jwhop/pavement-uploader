@@ -18,13 +18,18 @@ fileSelect.addEventListener('change', async function() {
       const renamedFile = await renameFile(originalFile, 'my-new-name.jpg');
       const reader = new FileReader();
       reader.readAsArrayBuffer(renamedFile);
-      
+      console.log(this.files[0]);
+      const name = this.files[0].name.toLowerCase();
+      const type = name.includes("heic") && !this.files[0].type ? 'heic' : this.files[0].type.includes('png')? 'png' : 'jpg';
+
+
       reader.onload = function(e) {
+        console.log(e.target);
         const rawBuffer = e.target.result;
         console.log(typeof rawBuffer);
         // Process your raw buffer data here
         console.log("Raw buffer data:", rawBuffer);
-        fetch('/image', {method: 'POST', headers:{ "Content-type": "application/octet-stream"}, body: file})
+        fetch('/image', {method: 'POST', headers:{ "Content-type": "application/octet-stream", "name": type }, body: file})
 
       };
     }  
